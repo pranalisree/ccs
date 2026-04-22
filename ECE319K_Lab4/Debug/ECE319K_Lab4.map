@@ -1,0 +1,536 @@
+******************************************************************************
+            TI ARM Clang Linker PC v4.0.4                      
+******************************************************************************
+>> Linked Mon Jan 12 09:01:51 2026
+
+OUTPUT FILE NAME:   <ECE319K_Lab4.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00001295
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00020000  00001b90  0001e470  R  X
+  SRAM                  20200000   00008000  000004ac  00007b54  RW X
+  BCR_CONFIG            41c00000   00000080  00000000  00000080  R   
+  BSL_CONFIG            41c00100   00000080  00000000  00000080  R   
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00001b90   00001b90    r-x
+  00000000    00000000    000000c0   000000c0    r-- .intvecs
+  000000c0    000000c0    00001380   00001380    r-x .text
+  00001440    00001440    00000720   00000720    r-- .rodata
+  00001b60    00001b60    00000030   00000030    r-- .cinit
+20200000    20200000    000002ac   00000000    rw-
+  20200000    20200000    00000200   00000000    rw- .sysmem
+  20200200    20200200    0000008c   00000000    rw- .bss
+  2020028c    2020028c    00000020   00000000    rw- .data
+20207e00    20207e00    00000200   00000000    rw-
+  20207e00    20207e00    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    000000c0     
+                  00000000    000000c0     startup_mspm0g3507_ticlang.o (.intvecs)
+
+.text      0    000000c0    00001380     
+                  000000c0    0000031c     ECE319K_Lab4Grader.o (.text.TIMG7_IRQHandler)
+                  000003dc    00000298     ECE319K_Lab4Grader.o (.text.CheckInitialization)
+                  00000674    00000218     ECE319K_Lab4Grader.o (.text.Lab4Grader)
+                  0000088c    000001b4     Clock.o (.text.Clock_Init80MHz)
+                  00000a40    00000130     UARTints.o (.text.UART_Init)
+                  00000b70    000000a8     Timer.o (.text.TimerG7_IntArm)
+                  00000c18    00000008     libclang_rt.builtins.a : aeabi_memcpy.S.obj (.text.__aeabi_memcpy)
+                  00000c20    00000088     libc.a : strcmp-armv6m.S.obj (.text:strcmp)
+                  00000ca8    0000007c     LaunchPad.o (.text.LaunchPad_Init)
+                  00000d24    0000007c     ECE319K_Lab4Grader.o (.text.ReadSensor)
+                  00000da0    0000007c     libc.a : copy_decompress_lzss.c.obj (.text:decompress:lzss)
+                  00000e1c    00000064     ECE319K_Lab4Grader.o (.text.GetState)
+                  00000e80    0000005c     ECE319K_Lab4Grader.o (.text.ReadSouth)
+                  00000edc    0000005c     UARTints.o (.text.UART0_IRQHandler)
+                  00000f38    00000058     UARTints.o (.text.copyHardwareToSoftware)
+                  00000f90    0000004c     ECE319K_Lab4Grader.o (.text.ReadWest)
+                  00000fdc    0000004c     FIFO.o (.text.RxFifo_Put)
+                  00001028    0000004c     FIFO.o (.text.TxFifo_Get)
+                  00001074    0000004c     FIFO.o (.text.TxFifo_Put)
+                  000010c0    0000004c     UARTints.o (.text.copySoftwareToHardware)
+                  0000110c    00000040     UARTints.o (.text.UART_OutChar)
+                  0000114c    00000040     libclang_rt.builtins.a : aeabi_uidivmod.S.obj (.text.__aeabi_uidivmod)
+                  0000118c    0000003c     libc.a : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  000011c8    00000038     LaunchPad.o (.text.ActivatePortA_B)
+                  00001200    00000036     UART.o (.text.UART_OutUDec)
+                  00001236    00000034     ECE319K_Lab4Grader.o (.text.setUpper)
+                  0000126a    00000002     libclang_rt.builtins.a : aeabi_div0.c.obj (.text.__aeabi_idiv0)
+                  0000126c    00000028     ECE319K_Lab4Grader.o (.text.ReadWalk)
+                  00001294    00000028     libc.a : boot_cortex_m.c.obj (.text:_c_int00_noargs)
+                  000012bc    00000026     UART.o (.text.UART_OutString)
+                  000012e2    00000002     --HOLE-- [fill = 0]
+                  000012e4    00000020     ECE319K_Lab4Grader.o (.text.Random32)
+                  00001304    0000001c     startup_mspm0g3507_ticlang.o (.text.Default_Handler)
+                  00001320    0000001c     startup_mspm0g3507_ticlang.o (.text.HardFault_Handler)
+                  0000133c    0000001c     ECE319K_Lab4main.o (.text.main)
+                  00001358    00000018     FIFO.o (.text.RxFifo_Size)
+                  00001370    00000018     FIFO.o (.text.TxFifo_Size)
+                  00001388    00000016     libc.a : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset)
+                  0000139e    00000002     --HOLE-- [fill = 0]
+                  000013a0    00000014     FIFO.o (.text.RxFifo_Init)
+                  000013b4    00000014     FIFO.o (.text.TxFifo_Init)
+                  000013c8    00000012     libc.a : memcpy16.S.obj (.text:TI_memcpy_small)
+                  000013da    00000012            : copy_decompress_none.c.obj (.text:decompress:none)
+                  000013ec    00000010     Clock.o (.text.Clock_Delay)
+                  000013fc    00000010     LaunchPad.o (.text.Delay)
+                  0000140c    00000010     ECE319K_Lab4Grader.o (.text.OutCRLF)
+                  0000141c    0000000c     Clock.o (.text.Clock_Freq)
+                  00001428    00000006     libc.a : exit.c.obj (.text:abort)
+                  0000142e    00000004     libsysbm.a : hostexit.c.obj (.text.HOSTexit)
+                  00001432    00000004     startup_mspm0g3507_ticlang.o (.text.Reset_Handler)
+                  00001436    00000004     libc.a : pre_init.c.obj (.text._system_pre_init)
+                  0000143a    00000006     --HOLE-- [fill = 0]
+
+.cinit     0    00001b60    00000030     
+                  00001b60    0000000c     (.cinit..data.load) [load image, compression = lzss]
+                  00001b6c    0000000c     (__TI_handler_table)
+                  00001b78    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00001b80    00000010     (__TI_cinit_table)
+
+.rodata    0    00001440    00000720     
+                  00001440    00000140     ECE319K_Lab4Grader.o (.rodata.SensorProblem)
+                  00001580    000000f0     ECE319K_Lab4Grader.o (.rodata.SouthProblem)
+                  00001670    000000c8     ECE319K_Lab4Grader.o (.rodata.PatternProblem)
+                  00001738    000000c4     ECE319K_Lab4Grader.o (.rodata.pat)
+                  000017fc    000000a0     ECE319K_Lab4Grader.o (.rodata.WestProblem)
+                  0000189c    0000003c     ECE319K_Lab4Grader.o (.rodata.str1.2038070715119815532.1)
+                  000018d8    0000003b     ECE319K_Lab4Grader.o (.rodata.str1.16779530290509432624.1)
+                  00001913    0000003b     ECE319K_Lab4Grader.o (.rodata.str1.17498187953803785574.1)
+                  0000194e    0000003a     ECE319K_Lab4Grader.o (.rodata.str1.16606019205615201728.1)
+                  00001988    00000039     ECE319K_Lab4Grader.o (.rodata.str1.9284763985356082046.1)
+                  000019c1    00000032     ECE319K_Lab4Grader.o (.rodata.str1.15359886083784593313.1)
+                  000019f3    0000002f     ECE319K_Lab4Grader.o (.rodata.str1.15781115582186980426.1)
+                  00001a22    0000002d     ECE319K_Lab4Grader.o (.rodata.str1.17275021033968133986.1)
+                  00001a4f    00000001     --HOLE-- [fill = 0]
+                  00001a50    0000001c     ECE319K_Lab4Grader.o (.rodata.validPatterns)
+                  00001a6c    00000018     ECE319K_Lab4Grader.o (.rodata.Patterns)
+                  00001a84    00000015     ECE319K_Lab4Grader.o (.rodata.str1.2555402902467091046.1)
+                  00001a99    00000014     ECE319K_Lab4Grader.o (.rodata.str1.15234707301245262108.1)
+                  00001aad    00000014     ECE319K_Lab4Grader.o (.rodata.str1.4246148022987157469.1)
+                  00001ac1    00000011     ECE319K_Lab4Grader.o (.rodata.str1.15784370611720847563.1)
+                  00001ad2    00000011     ECE319K_Lab4Grader.o (.rodata.str1.1843502570865695391.1)
+                  00001ae3    00000011     ECE319K_Lab4Grader.o (.rodata.str1.5588775933247468439.1)
+                  00001af4    00000010     ECE319K_Lab4Grader.o (.rodata.str1.13656068226097152554.1)
+                  00001b04    00000010     ECE319K_Lab4Grader.o (.rodata.str1.1892906268486917520.1)
+                  00001b14    0000000d     ECE319K_Lab4Grader.o (.rodata.str1.13250458590540267396.1)
+                  00001b21    0000000a     ECE319K_Lab4Grader.o (.rodata.str1.17435735570853986759.1)
+                  00001b2b    0000000a     ECE319K_Lab4Grader.o (.rodata.str1.2378633843444072158.1)
+                  00001b35    00000007     ECE319K_Lab4main.o (.rodata.EID1)
+                  00001b3c    00000007     ECE319K_Lab4Grader.o (.rodata.str1.13204408886487587144.1)
+                  00001b43    00000007     ECE319K_Lab4Grader.o (.rodata.str1.16432026393149098184.1)
+                  00001b4a    00000007     ECE319K_Lab4Grader.o (.rodata.str1.18047125755768554460.1)
+                  00001b51    00000006     ECE319K_Lab4Grader.o (.rodata.str1.5065595287206724195.1)
+                  00001b57    00000005     ECE319K_Lab4Grader.o (.rodata.str1.9434006009711075035.1)
+                  00001b5c    00000004     --HOLE-- [fill = 0]
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.binit     0    00000000    00000000     
+
+.sysmem    0    20200000    00000200     UNINITIALIZED
+                  20200000    00000010     libc.a : memory.c.obj (.sysmem)
+                  20200010    000001f0     --HOLE--
+
+.bss       0    20200200    0000008c     UNINITIALIZED
+                  20200200    00000040     FIFO.o (.bss.TxFifo)
+                  20200240    00000010     FIFO.o (.bss.RxFifo)
+                  20200250    00000004     (.common:LastIn)
+                  20200254    00000004     (.common:LastOut)
+                  20200258    00000004     (.common:LastState)
+                  2020025c    00000004     (.common:LookingFlag)
+                  20200260    00000004     (.common:LookingFor)
+                  20200264    00000004     (.common:M)
+                  20200268    00000004     (.common:NeedState)
+                  2020026c    00000004     (.common:RxGetI)
+                  20200270    00000004     (.common:RxPutI)
+                  20200274    00000004     (.common:TxGetI)
+                  20200278    00000004     (.common:TxPutI)
+                  2020027c    00000004     (.common:WrongState)
+                  20200280    00000004     (.common:in)
+                  20200284    00000004     (.common:out)
+                  20200288    00000004     (.common:state)
+
+.data      0    2020028c    00000020     UNINITIALIZED
+                  2020028c    00000004     Clock.o (.data.BusFreq)
+                  20200290    00000004     ECE319K_Lab4Grader.o (.data.Fail)
+                  20200294    00000004     ECE319K_Lab4Grader.o (.data.PatternMode)
+                  20200298    00000004     ECE319K_Lab4Grader.o (.data.Score)
+                  2020029c    00000004     ECE319K_Lab4Grader.o (.data.SensorMode)
+                  202002a0    00000004     ECE319K_Lab4Grader.o (.data.SouthMode)
+                  202002a4    00000004     ECE319K_Lab4Grader.o (.data.Time)
+                  202002a8    00000004     ECE319K_Lab4Grader.o (.data.WestMode)
+
+.stack     0    20207e00    00000200     UNINITIALIZED
+                  20207e00    00000004     libc.a : boot_cortex_m.c.obj (.stack)
+                  20207e04    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20200000    00000000     UNINITIALIZED
+
+__llvm_prf_bits 
+*          0    20200000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                         code   ro data   rw data
+       ------                         ----   -------   -------
+    .\
+       ECE319K_Lab4Grader.o           2528   1812      72     
+       UARTints.o                     624    0         0      
+       Clock.o                        464    0         4      
+       FIFO.o                         316    0         96     
+       LaunchPad.o                    196    0         0      
+       Timer.o                        168    0         0      
+       UART.o                         92     0         0      
+       ECE319K_Lab4main.o             28     7         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         4416   1819      172    
+                                                              
+    .\ticlang\
+       startup_mspm0g3507_ticlang.o   60     192       0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         60     192       0      
+                                                              
+    C:\ti\ccs2020\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\lib\armv6m-ti-none-eabi/c/libc.a
+       strcmp-armv6m.S.obj            136    0         0      
+       copy_decompress_lzss.c.obj     124    0         0      
+       autoinit.c.obj                 60     0         0      
+       boot_cortex_m.c.obj            40     0         0      
+       copy_zero_init.c.obj           22     0         0      
+       copy_decompress_none.c.obj     18     0         0      
+       memcpy16.S.obj                 18     0         0      
+       exit.c.obj                     6      0         0      
+       pre_init.c.obj                 4      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         428    0         0      
+                                                              
+    C:\ti\ccs2020\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\lib\armv6m-ti-none-eabi/c/libsysbm.a
+       hostexit.c.obj                 4      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         4      0         0      
+                                                              
+    C:\ti\ccs2020\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\lib\armv6m-ti-none-eabi/libclang_rt.builtins.a
+       aeabi_uidivmod.S.obj           64     0         0      
+       aeabi_memcpy.S.obj             8      0         0      
+       aeabi_div0.c.obj               2      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         74     0         0      
+                                                              
+       Heap:                          0      0         512    
+       Stack:                         0      0         512    
+       Linker Generated:              0      48        0      
+    +--+------------------------------+------+---------+---------+
+       Grand Total:                   4982   2059      1196   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00001b80 records: 2, size/record: 8, table size: 16
+	.data: load addr=00001b60, load size=0000000c bytes, run addr=2020028c, run size=00000020 bytes, compression=lzss
+	.bss: load addr=00001b78, load size=00000008 bytes, run addr=20200200, run size=0000008c bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00001b6c records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+00001305  ADC0_IRQHandler               
+00001305  ADC1_IRQHandler               
+00001305  AES_IRQHandler                
+000011c9  ActivatePortA_B               
+2020028c  BusFreq                       
+0000142e  C$$EXIT                       
+00001305  CANFD0_IRQHandler             
+000003dd  CheckInitialization           
+000013ed  Clock_Delay                   
+0000141d  Clock_Freq                    
+0000088d  Clock_Init80MHz               
+00001305  DAC0_IRQHandler               
+00001305  DMA_IRQHandler                
+00001305  Default_Handler               
+000013fd  Delay                         
+00001b35  EID1                          
+00001305  GROUP0_IRQHandler             
+00001305  GROUP1_IRQHandler             
+00000e1d  GetState                      
+0000142f  HOSTexit                      
+00001321  HardFault_Handler             
+00001305  I2C0_IRQHandler               
+00001305  I2C1_IRQHandler               
+00000675  Lab4Grader                    
+20200250  LastIn                        
+20200254  LastOut                       
+20200258  LastState                     
+00000ca9  LaunchPad_Init                
+2020025c  LookingFlag                   
+20200260  LookingFor                    
+20200264  M                             
+00001305  NMI_Handler                   
+20200268  NeedState                     
+0000140d  OutCRLF                       
+00001670  PatternProblem                
+00001a6c  Patterns                      
+00001305  PendSV_Handler                
+00001305  RTC_IRQHandler                
+000012e5  Random32                      
+00000d25  ReadSensor                    
+00000e81  ReadSouth                     
+0000126d  ReadWalk                      
+00000f91  ReadWest                      
+00001433  Reset_Handler                 
+000013a1  RxFifo_Init                   
+00000fdd  RxFifo_Put                    
+00001359  RxFifo_Size                   
+2020026c  RxGetI                        
+20200270  RxPutI                        
+00001305  SPI0_IRQHandler               
+00001305  SPI1_IRQHandler               
+00001305  SVC_Handler                   
+00001440  SensorProblem                 
+00001580  SouthProblem                  
+00001305  SysTick_Handler               
+00001305  TIMA0_IRQHandler              
+00001305  TIMA1_IRQHandler              
+00001305  TIMG0_IRQHandler              
+00001305  TIMG12_IRQHandler             
+00001305  TIMG6_IRQHandler              
+000000c1  TIMG7_IRQHandler              
+00001305  TIMG8_IRQHandler              
+000013c9  TI_memcpy_small               
+202002a4  Time                          
+00000b71  TimerG7_IntArm                
+00001029  TxFifo_Get                    
+000013b5  TxFifo_Init                   
+00001075  TxFifo_Put                    
+00001371  TxFifo_Size                   
+20200274  TxGetI                        
+20200278  TxPutI                        
+00000edd  UART0_IRQHandler              
+00001305  UART1_IRQHandler              
+00001305  UART2_IRQHandler              
+00001305  UART3_IRQHandler              
+00000a41  UART_Init                     
+0000110d  UART_OutChar                  
+000012bd  UART_OutString                
+00001201  UART_OutUDec                  
+000017fc  WestProblem                   
+2020027c  WrongState                    
+20208000  __STACK_END                   
+00000200  __STACK_SIZE                  
+00000200  __SYSMEM_SIZE                 
+00000000  __TI_ATRegion0_region_sz      
+00000000  __TI_ATRegion0_src_addr       
+00000000  __TI_ATRegion0_trg_addr       
+00000000  __TI_ATRegion1_region_sz      
+00000000  __TI_ATRegion1_src_addr       
+00000000  __TI_ATRegion1_trg_addr       
+00000000  __TI_ATRegion2_region_sz      
+00000000  __TI_ATRegion2_src_addr       
+00000000  __TI_ATRegion2_trg_addr       
+00001b80  __TI_CINIT_Base               
+00001b90  __TI_CINIT_Limit              
+00001b90  __TI_CINIT_Warm               
+00001b6c  __TI_Handler_Table_Base       
+00001b78  __TI_Handler_Table_Limit      
+0000118d  __TI_auto_init_nobinit_nopinit
+00000da1  __TI_decompress_lzss          
+000013db  __TI_decompress_none          
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+00000000  __TI_static_base__            
+00001389  __TI_zero_init_nomemset       
+0000126b  __aeabi_idiv0                 
+00000c19  __aeabi_memcpy                
+00000c19  __aeabi_memcpy4               
+00000c19  __aeabi_memcpy8               
+0000114d  __aeabi_uidiv                 
+0000114d  __aeabi_uidivmod              
+ffffffff  __binit__                     
+UNDEFED   __mpu_init                    
+20207e00  __stack                       
+20200000  __start___llvm_prf_bits       
+20200000  __start___llvm_prf_cnts       
+20200000  __stop___llvm_prf_bits        
+20200000  __stop___llvm_prf_cnts        
+00001295  _c_int00_noargs               
+20200000  _sys_memory                   
+UNDEFED   _system_post_cinit            
+00001437  _system_pre_init              
+00001429  abort                         
+ffffffff  binit                         
+20200280  in                            
+00000000  interruptVectors              
+0000133d  main                          
+20200284  out                           
+00001738  pat                           
+00001237  setUpper                      
+20200288  state                         
+00000c21  strcmp                        
+00001a50  validPatterns                 
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000000  __TI_ATRegion0_region_sz      
+00000000  __TI_ATRegion0_src_addr       
+00000000  __TI_ATRegion0_trg_addr       
+00000000  __TI_ATRegion1_region_sz      
+00000000  __TI_ATRegion1_src_addr       
+00000000  __TI_ATRegion1_trg_addr       
+00000000  __TI_ATRegion2_region_sz      
+00000000  __TI_ATRegion2_src_addr       
+00000000  __TI_ATRegion2_trg_addr       
+00000000  __TI_static_base__            
+00000000  interruptVectors              
+000000c1  TIMG7_IRQHandler              
+00000200  __STACK_SIZE                  
+00000200  __SYSMEM_SIZE                 
+000003dd  CheckInitialization           
+00000675  Lab4Grader                    
+0000088d  Clock_Init80MHz               
+00000a41  UART_Init                     
+00000b71  TimerG7_IntArm                
+00000c19  __aeabi_memcpy                
+00000c19  __aeabi_memcpy4               
+00000c19  __aeabi_memcpy8               
+00000c21  strcmp                        
+00000ca9  LaunchPad_Init                
+00000d25  ReadSensor                    
+00000da1  __TI_decompress_lzss          
+00000e1d  GetState                      
+00000e81  ReadSouth                     
+00000edd  UART0_IRQHandler              
+00000f91  ReadWest                      
+00000fdd  RxFifo_Put                    
+00001029  TxFifo_Get                    
+00001075  TxFifo_Put                    
+0000110d  UART_OutChar                  
+0000114d  __aeabi_uidiv                 
+0000114d  __aeabi_uidivmod              
+0000118d  __TI_auto_init_nobinit_nopinit
+000011c9  ActivatePortA_B               
+00001201  UART_OutUDec                  
+00001237  setUpper                      
+0000126b  __aeabi_idiv0                 
+0000126d  ReadWalk                      
+00001295  _c_int00_noargs               
+000012bd  UART_OutString                
+000012e5  Random32                      
+00001305  ADC0_IRQHandler               
+00001305  ADC1_IRQHandler               
+00001305  AES_IRQHandler                
+00001305  CANFD0_IRQHandler             
+00001305  DAC0_IRQHandler               
+00001305  DMA_IRQHandler                
+00001305  Default_Handler               
+00001305  GROUP0_IRQHandler             
+00001305  GROUP1_IRQHandler             
+00001305  I2C0_IRQHandler               
+00001305  I2C1_IRQHandler               
+00001305  NMI_Handler                   
+00001305  PendSV_Handler                
+00001305  RTC_IRQHandler                
+00001305  SPI0_IRQHandler               
+00001305  SPI1_IRQHandler               
+00001305  SVC_Handler                   
+00001305  SysTick_Handler               
+00001305  TIMA0_IRQHandler              
+00001305  TIMA1_IRQHandler              
+00001305  TIMG0_IRQHandler              
+00001305  TIMG12_IRQHandler             
+00001305  TIMG6_IRQHandler              
+00001305  TIMG8_IRQHandler              
+00001305  UART1_IRQHandler              
+00001305  UART2_IRQHandler              
+00001305  UART3_IRQHandler              
+00001321  HardFault_Handler             
+0000133d  main                          
+00001359  RxFifo_Size                   
+00001371  TxFifo_Size                   
+00001389  __TI_zero_init_nomemset       
+000013a1  RxFifo_Init                   
+000013b5  TxFifo_Init                   
+000013c9  TI_memcpy_small               
+000013db  __TI_decompress_none          
+000013ed  Clock_Delay                   
+000013fd  Delay                         
+0000140d  OutCRLF                       
+0000141d  Clock_Freq                    
+00001429  abort                         
+0000142e  C$$EXIT                       
+0000142f  HOSTexit                      
+00001433  Reset_Handler                 
+00001437  _system_pre_init              
+00001440  SensorProblem                 
+00001580  SouthProblem                  
+00001670  PatternProblem                
+00001738  pat                           
+000017fc  WestProblem                   
+00001a50  validPatterns                 
+00001a6c  Patterns                      
+00001b35  EID1                          
+00001b6c  __TI_Handler_Table_Base       
+00001b78  __TI_Handler_Table_Limit      
+00001b80  __TI_CINIT_Base               
+00001b90  __TI_CINIT_Limit              
+00001b90  __TI_CINIT_Warm               
+20200000  __start___llvm_prf_bits       
+20200000  __start___llvm_prf_cnts       
+20200000  __stop___llvm_prf_bits        
+20200000  __stop___llvm_prf_cnts        
+20200000  _sys_memory                   
+20200250  LastIn                        
+20200254  LastOut                       
+20200258  LastState                     
+2020025c  LookingFlag                   
+20200260  LookingFor                    
+20200264  M                             
+20200268  NeedState                     
+2020026c  RxGetI                        
+20200270  RxPutI                        
+20200274  TxGetI                        
+20200278  TxPutI                        
+2020027c  WrongState                    
+20200280  in                            
+20200284  out                           
+20200288  state                         
+2020028c  BusFreq                       
+202002a4  Time                          
+20207e00  __stack                       
+20208000  __STACK_END                   
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  binit                         
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
+
+[134 symbols]
